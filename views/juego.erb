@@ -1,0 +1,83 @@
+<html>
+    <head>
+        
+        <script>
+            
+				var button1= 0;
+                var button2= 0;
+                var button3= 0;
+                var button4= 0;
+            
+            function eleccion(button, newValue){
+                
+                if(button==1){
+                    button1 = newValue;
+                }
+                if(button==2){
+                    button2 = newValue;
+                }
+                if(button==3){
+                    button3 = newValue;
+                }
+                if(button==4){
+                    button4 = newValue;
+                }                
+                
+            }
+            
+            function reiniciar(){
+                 button1= 0;
+                 button2= 0;
+                 button3= 0;
+                 button4= 0;
+            }
+            
+            
+            function validar(){
+
+                if(button1!=0 && button3!=0 && button1==button3){
+                    alert("Correcto");
+                }
+                
+                if(button2!=0 && button4!=0 && button2==button4){
+                    alert("Correcto");
+                }              
+
+				reiniciar();
+            }
+
+        </script>
+        
+    </head>
+    <body>
+        
+      
+        
+        <form method="POST" action="/marcar/j1">
+            
+            <table>
+                <tr>
+                    <td>
+                        <input type="button" name="button1" value="1" onclick="eleccion(1,1);">
+                    </td>
+                    <td>
+                        <input type="button" name="button2" value="2" onclick="eleccion(2,2);">
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" name="button3" value="1" onclick="eleccion(3,1);">
+                    </td>
+                    <td>
+                        <input type="button" name="button4" value="2" onclick="eleccion(4,2);">
+                    </td>                    
+                </tr>                
+                
+            </table>
+            <input type="button" id="marcarj1" value="marcar" onclick="validar()" />
+			<input type="button" id="marcarj1" value="reiniciar" onclick="reiniciar()" />
+            
+        </form>
+    
+    </body>
+</html>
