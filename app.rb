@@ -11,37 +11,42 @@ enable :sessions
 set :session_secret, 'thisIsAKleerSecret'
 
 get '/' do
+	erb :inicio
+end
+
+post '/iniciar' do
+  session["jugador"] = params["textj1"]
+  session["contador"] = ContadorPuntos.new
+  
 	erb :juego
 end
 
 post '/marcar/j1' do
- # session["contador"].marcar "j1"
-#  session["contador"].marcar "j1"
-
-  
-  erb :juego
+ session["contador"].marcar "j1"
+ erb :juego
 end
 
 post '/marcar/j2' do
- # session["contador"].marcar "j2"
-  erb :juego
+ erb :juego
 end
 
 post '/marcar/j3' do
-  #session["contador"].marcar "j3"
   erb :juego
 end
 
 post '/marcar/j4' do
-  #session["contador"].marcar "j4"
   erb :juego
 end
 
 
-post '/validar/' do
+post '/validar' do
   
-  session["contador"] = ContadorPuntos.new 
+  
   session["score"] = session["contador"].score
+  erb :juego  
+end
+
+post '/marcar/j4' do
   erb :juego
 end
 

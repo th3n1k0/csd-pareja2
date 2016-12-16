@@ -20,13 +20,13 @@ class ContadorPuntos
     
     def marcar jugador
         
-        if jugagor=="j1"
+        if jugador=="j1"
             @button1 = 1
-        elsif jugagor=="j2"
+        elsif jugador=="j2"
             @button2 = 1
-        elsif jugagor=="j3"
+        elsif jugador=="j3"
             @button3 = 1
-        elsif jugagor=="j4"
+        elsif jugador=="j4"
             @button4 = 1         
         end
         
