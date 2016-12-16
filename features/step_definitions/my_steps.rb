@@ -13,3 +13,4 @@ end
 When(/^inicio una partida$/) do
   click_button("iniciar")
 end
+
