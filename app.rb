@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'better_errors'
+require './lib/contador.rb'
 
 configure :development do
   use BetterErrors::Middleware
@@ -14,21 +15,33 @@ get '/' do
 end
 
 post '/marcar/j1' do
-  session["contador"].marcar "j1"
+ # session["contador"].marcar "j1"
+#  session["contador"].marcar "j1"
+
+  
   erb :juego
 end
 
 post '/marcar/j2' do
-  session["contador"].marcar "j2"
+ # session["contador"].marcar "j2"
   erb :juego
 end
 
 post '/marcar/j3' do
-  session["contador"].marcar "j3"
+  #session["contador"].marcar "j3"
   erb :juego
 end
 
 post '/marcar/j4' do
-  session["contador"].marcar "j4"
+  #session["contador"].marcar "j4"
   erb :juego
 end
+
+
+post '/validar/' do
+  
+  session["contador"] = ContadorPuntos.new 
+  session["score"] = session["contador"].score
+  erb :juego
+end
+

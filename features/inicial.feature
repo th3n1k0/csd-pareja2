@@ -6,6 +6,3 @@ Feature:
 Scenario: el juego inicia en 0
   Given que inicia el juego
   Then debo ver "0"
-  
-  
-  
