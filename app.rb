@@ -12,3 +12,23 @@ set :session_secret, 'thisIsAKleerSecret'
 get '/' do
 	erb :juego
 end
+
+post '/marcar/j1' do
+  session["contador"].marcar "j1"
+  erb :juego
+end
+
+post '/marcar/j2' do
+  session["contador"].marcar "j2"
+  erb :juego
+end
+
+post '/marcar/j3' do
+  session["contador"].marcar "j3"
+  erb :juego
+end
+
+post '/marcar/j4' do
+  session["contador"].marcar "j4"
+  erb :juego
+end
